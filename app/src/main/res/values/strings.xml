@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Brostore</string>
+    <string name="download">Download</string>
+    <string name="cancel">Cancel</string>
+    <string name="retry">Retry</string>
+    <string name="update">Update</string>
+</resources>
