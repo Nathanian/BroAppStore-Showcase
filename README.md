@@ -1,83 +1,92 @@
-# Android App Store & Update Manager (Sanitized Public Showcase)
+# BroStore Showcase
 
-This repository is a **sanitized public-demo version** of an Android application distribution and update-management system for managed/embedded Android devices.
+A showcase version of my Android-based application distribution and update-management platform designed for embedded and robotic Android devices.
 
-It preserves the technical architecture for:
-- remote catalog sync
-- APK download + installation flow
-- signed URL retrieval
-- update checks
-- rollback-ready package handling patterns
-- background-friendly download orchestration and status tracking
-- notification and UI update states
+This project was developed to simplify remote application deployment, updates, rollback handling, and maintenance workflows for Android systems operating in production environments.
 
-All confidential customer, infrastructure, and production-specific values have been replaced with placeholders.
+The application focuses on lightweight infrastructure, Android compatibility, reliability, and simple remote maintenance workflows.
 
-## Sanitization Highlights
+## Features
 
-Sensitive or internal values were replaced with placeholders such as:
-- `YOUR_SERVER_URL`
-- `YOUR_UPDATE_ENDPOINT`
-- `YOUR_API_KEY`
-- `YOUR_BUCKET_NAME`
-- `YOUR_PACKAGE_NAME`
+* APK update distribution
+* Application version management
+* In-app update notifications
+* APK installation workflows
+* Rollback and backup handling
+* Background update checking
+* JSON-based update metadata
+* Remote deployment support
+* Embedded-system friendly architecture
+* Android 7 compatibility
+* Lightweight update infrastructure
 
-Additionally:
-- Internal domains/IPs and production backend references were removed.
-- Firebase/Google service values were replaced with sample placeholders.
-- Package identifiers were changed to a demo-safe namespace (`com.example.appstoredemo`).
-- Internal file-provider and download directory naming was sanitized.
-- Generated/local Gradle cache artifacts were removed from versioned project content where applicable.
+## Technical Highlights
+
+* Java-based Android application
+* APK installation management
+* Update metadata parsing
+* Background service integration
+* File and storage management
+* Notification-based update workflows
+* Rollback handling
+* Embedded/robotics-oriented system design
+* Config-based infrastructure abstraction
+
+## Example Use Cases
+
+* Remote robot application updates
+* Internal Android app distribution
+* Embedded device maintenance
+* Fleet-wide APK deployment
+* Lightweight enterprise update systems
+* Offline-capable update workflows
 
 ## Architecture Overview
 
-- `activities/MainActivity`  
-  Hosts core navigation and app lifecycle wiring.
+The application uses a lightweight update-management workflow:
 
-- `fragments/`  
-  UI for home, discover, settings, and installed-app workflows.
+1. Device checks remote metadata
+2. Available updates are detected dynamically
+3. APK packages are downloaded locally
+4. Installation workflows are triggered through Android package handling
+5. Rollback and backup systems allow recovery if needed
 
-- `viewmodels/`  
-  MVVM state handling for catalog loading, app list filtering, and update state exposure.
+## Android Compatibility
 
-- `repositories/`  
-  Encapsulates catalog loading, download execution, APK file handling, and install triggers.
+This project was intentionally designed for compatibility with older Android systems, especially Android 7 (API 24/25), which are still common in embedded and robotics hardware.
 
-- `network/`  
-  Retrofit service interface for remote metadata and signed URL endpoints.
+## Public Showcase Notes
 
-- `managers/`  
-  Update and remote-app orchestration logic.
+This repository is a sanitized public showcase version of an internal production-oriented project.
 
-- `utils/`  
-  Shared constants, installer helpers, version compare utilities, and threading/executors.
+The following were removed or replaced:
 
-## Configuration
+* Internal infrastructure references
+* Cloud storage configuration
+* Private update endpoints
+* Credentials and sensitive configuration
+* Proprietary APKs and deployment data
+* Customer-specific information
 
-Use placeholder-driven configuration and replace values for your environment:
+Placeholder values are used where required.
 
-1. Update constants in:
-   - `app/src/main/java/com/bro/brostore/utils/Constants.java`
-2. Replace sample Google services values in:
-   - `app/google-services.json`
-3. Update package/application IDs as needed in:
-   - `app/build.gradle`
-   - `app/src/main/AndroidManifest.xml`
+## Tech Stack
 
-See [`config.example.env`](config.example.env) for a quick template.
+* Java
+* Android SDK
+* JSON
+* Android Services
+* File Management
+* Notification System
+* Gradle
 
-## Build
+## Screenshots
 
-```bash
-./gradlew assembleDebug
-```
+<img width="819" height="246" alt="Meine Apps" src="https://github.com/user-attachments/assets/27375ffd-09ee-453a-a722-d53997fce01c" />
+<img width="821" height="472" alt="Entdecken" src="https://github.com/user-attachments/assets/101d56ee-2952-41ec-974d-22d8f58b7bf7" />
 
-## Notes for Evaluators / Employers
+## Author
 
-This showcase focuses on engineering patterns used in real-world managed Android deployment systems:
-- structured repository + MVVM architecture
-- resilient asynchronous download/update flows
-- package-version comparison and installation orchestration
-- clear separation of UI, data access, network, and update management
+Jan Herold
+Application Developer / Android & Robotics Development
 
-No private infrastructure or customer-specific operational data is included.
